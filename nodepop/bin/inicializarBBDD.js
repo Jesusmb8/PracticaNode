@@ -31,6 +31,7 @@ async function inicializarAnuncios() {
     { articulo: 'Bmw serie 4', tipo: 'Compra', precio: 10000, imagen: 'bmwS4.jpg', tags: ['motor','work'] },
     { articulo: 'Bmw serie X4', tipo: 'Venta', precio: 23000, imagen: 'bmwX4.jpg', tags: ['motor','work'] },
     { articulo: 'Mercedes CLA', tipo: 'Venta', precio: 26000, imagen: 'mercedesCLA.jpg', tags: ['motor','work'] },
+    { articulo: 'Nike Jordan', tipo: 'Venta', precio: 100, imagen: 'nikeJordan.jpg', tags: 'lifestyle' },
   ]);
   console.log(`Creados ${inserted.length} anuncios`);
 }
