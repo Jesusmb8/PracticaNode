@@ -14,6 +14,7 @@ router.get("/", async function (req, res, next) {
 })
 
 
+
 // poder crear un anuncio
 router.post("/", async (req, res, next) => {
 
@@ -40,5 +41,15 @@ router.post("/", async (req, res, next) => {
 
 
 // lista de tags
+router.get("/tags", async (req, res, next) => {
 
+    try {
+        // Query para ver todos los tags
+        const tags = await Anuncio.distinct('tags');
+        res.json({ result: tags });
+    } catch (error) {
+        next(error);
+    }
+
+})
 module.exports = router;

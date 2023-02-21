@@ -25,13 +25,13 @@ async function inicializarAnuncios() {
 
   // crear agentes iniciales
   const inserted = await Anuncio.insertMany([
-    { articulo: 'iPhone 7 plus', tipo: 'Venta', precio: 200.22, imagen: 'iphone7plus.jpg', tags: 'mobile' },
-    { articulo: 'iPhone 13', tipo: 'Venta', precio: 800.32, imagen: 'iphone13.jpg', tags: 'mobile' },
-    { articulo: 'iPhone 14', tipo: 'Compra', precio: 999.99, imagen: 'iphone14.jpg', tags: 'mobile' },
-    { articulo: 'Bmw serie 4', tipo: 'Compra', precio: 10000, imagen: 'bmwS4.jpg', tags: ['motor','work'] },
-    { articulo: 'Bmw serie X4', tipo: 'Venta', precio: 23000, imagen: 'bmwX4.jpg', tags: ['motor','work'] },
-    { articulo: 'Mercedes CLA', tipo: 'Venta', precio: 26000, imagen: 'mercedesCLA.jpg', tags: ['motor','work'] },
-    { articulo: 'Nike Jordan', tipo: 'Venta', precio: 100, imagen: 'nikeJordan.jpg', tags: 'lifestyle' },
+    { articulo: 'iPhone 7 plus', venta: true, precio: 200.22, imagen: 'iphone7plus.jpg', tags: 'mobile' },
+    { articulo: 'iPhone 13', venta: true, precio: 800.32, imagen: 'iphone13.jpg', tags: 'mobile' },
+    { articulo: 'iPhone 14', venta: false, precio: 999.99, imagen: 'iphone14.jpg', tags: 'mobile' },
+    { articulo: 'Bmw serie 4', venta: false, precio: 10000, imagen: 'bmwS4.jpg', tags: ['motor','work'] },
+    { articulo: 'Bmw serie X4',venta: true, precio: 23000, imagen: 'bmwX4.jpg', tags: ['motor','work'] },
+    { articulo: 'Mercedes CLA',venta: true, precio: 26000, imagen: 'mercedesCLA.jpg', tags: ['motor','work'] },
+    { articulo: 'Nike Jordan', venta: true, precio: 100, imagen: 'nikeJordan.jpg', tags: 'lifestyle' },
   ]);
   console.log(`Creados ${inserted.length} anuncios`);
 }

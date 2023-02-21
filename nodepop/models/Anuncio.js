@@ -3,9 +3,8 @@ const mongoose = require('mongoose');
 // Creamos el esquema
 const anuncioSchema = mongoose.Schema({
     articulo: String,
-    tipo: { 
-        type: String, 
-        enum: ['Venta', 'Compra'],
+    venta: { 
+        type: Boolean, 
         required:true
     },
     precio: Number,
