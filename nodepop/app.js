@@ -32,6 +32,9 @@ app.use('/users', usersRouter);
 
 // Montamos el router de anuncios
 app.use("/api/anuncios", anunciosRouter);
+// Montamos el mismo pero distinto endpoint
+// Utilizamos misma query, modificamos sólo la respuesta
+app.use("/anuncios", anunciosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

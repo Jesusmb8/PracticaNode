@@ -3,10 +3,22 @@ var router = express.Router();
 const Anuncio = require('../../models/Anuncio')
 // Obtener todos
 router.get("/", async function (req, res, next) {
-    console.log('obtener todos');
     try {
-        const anuncios = await Anuncio.find();
-        res.json({ resultado: anuncios });
+
+        // Paginacion 
+        const start = req.query.start;
+        const limit = req.query.limit;
+        const sort = req.query.sort;
+        const criteria = undefined;
+        const anuncios = await Anuncio.query(criteria, start, limit, sort);
+        // Comprobamos si es api o web
+        if (req.originalUrl.startsWith('/api/')) {
+            res.json({ resultado: anuncios });
+        } else {
+            res.locals.anuncios = anuncios;
+            res.render('anuncios');
+        }
+
 
     } catch (error) {
         next(error);
