@@ -6,3 +6,31 @@ body {
 a {
   color: #00B7FF;
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  width:60%;
+  margin: 0 auto;
+}
+
+.flex-element {
+  background-color: beige;
+  border: 1px solid blue;
+  width: 300px;
+  padding: 3px 30px
+}
+.title{
+  font-weight: bold;
+}
+
+.price{
+  font-style: italic;
+}
+
+p[venta=true]{
+  color:green;
+}
+p[venta=false]{
+  color:red;
+}

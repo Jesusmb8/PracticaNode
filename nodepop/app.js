@@ -13,6 +13,9 @@ require('./lib/connectMongoose');
 
 var app = express();
 
+// Variables globales
+app.locals.title ="Nodepop by Jesús";
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
