@@ -9,16 +9,47 @@ router.get("/", async function (req, res, next) {
         const start = req.query.start;
         const limit = req.query.limit;
         const sort = req.query.sort;
-        const criteria = undefined;
+        // Filtros
+        const filterByTipo = req.query.venta;
+        const filterByTag = req.query.tag;
+        const filterByArticulo = req.query.articulo;
+        const criteria = {};
+
+        // Tipo, venta o compra
+        if (filterByTipo !== undefined) {
+            criteria.venta = filterByTipo;
+        }
+
+        // Por tag aplica un and
+        if (filterByTag) {
+            criteria.tags = filterByTag;
+            if (filterByTag.length > 1) {
+                criteria.tags =
+                {
+                    $in: filterByTag
+                };
+            }
+        }
+        // Filtro por artículo:
+        if (filterByArticulo) {
+            criteria.articulo =
+            {
+                $regex: new RegExp(filterByArticulo, 'ig')
+            };
+        }
+
+        console.log('Criteria', criteria);
         const anuncios = await Anuncio.query(criteria, start, limit, sort);
         // Comprobamos si es api o web
         if (req.originalUrl.startsWith('/api/')) {
-            res.json({ resultado: anuncios });
+            res.json({
+                numAnuncios: anuncios.length,
+                resultado: anuncios
+            });
         } else {
             res.locals.anuncios = anuncios;
             res.render('anuncios');
         }
-
 
     } catch (error) {
         next(error);

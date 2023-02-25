@@ -6,17 +6,20 @@ body {
 a {
   color: #00B7FF;
 }
+/* Lista de artículos */
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   width:60%;
   margin: 0 auto;
+  gap:20px
 }
 
 .flex-element {
   background-color: beige;
-  border: 1px solid blue;
+  border: 1px solid none;
+  border-radius: 10px;
   width: 300px;
   padding: 3px 30px
 }
@@ -33,4 +36,17 @@ p[venta=true]{
 }
 p[venta=false]{
   color:red;
+}
+
+.imagen{
+  width: 250px;
+  height: 250px;
+}
+/* Form */
+.element-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 10px;
+  gap: 10px;
 }

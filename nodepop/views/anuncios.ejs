@@ -12,12 +12,27 @@
 
 <main>
     <h2>Anuncios</h2>
+    <form >
+        <div class="element-form">
+            <label for="idArticulo">Artículo</label>
+            <input type="text" id="idArticulo" name="articulo" placeholder="Busque por artículo">
+        </div>
+        <div class="element-form">
+            <input type="submit" value="Buscar">
+        </div>
+      </form>
+    <hr>
     <div class="flex-container">
         <% anuncios.forEach(anuncio => { %>
             <div class="flex-element">
                 <p class="title"><%= anuncio.articulo %></p>
-                <img src="images/<%=anuncio.imagen%>">
-                <p class="price " venta="<%= anuncio.venta %>"><%= anuncio.precio %> €</p>
+                <img class="imagen" src="images/<%=anuncio.imagen%>">
+                <% if (anuncio.venta) { %>
+                    <p class="price " venta="<%= anuncio.venta %>"> Se vende <%= anuncio.precio %> €</p>
+                <% } else { %>
+                    <p class="price " venta="<%= anuncio.venta %>"> Se compra <%= anuncio.precio %> €</p>
+                 <% } %>
+                <p> Tags <%= anuncio.tags%></p>
             </div>
         <% }) %>
     </div>

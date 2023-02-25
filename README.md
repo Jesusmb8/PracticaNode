@@ -28,3 +28,16 @@ La API ha sido generada utilizando express:
     ```sh
     npm run start
     ```
+4. Para conectar con la api, remcomentamos utilizar Postman.
+    Aquí algunso ejemplos:
+    - [Query ordenada por precio](http://localhost:3030/api/anuncios?sort=precio)
+        ```
+        http://localhost:3030/api/anuncios?sort=precio
+        ```
+    - 
+
+
+Notas:
+- El filtro por tag, si indicamos varios aplica un OR. Parece más cómod que los criterios por tags sean los que se indican para poder buscar múltiples artículos buscando por sus tags.
+- El filtro por artículo, no distingurá entre mayúsculas y minúsculuas.
+    Busacará el texto en la descripción, en cualquier posición, aplicará un contiene.
