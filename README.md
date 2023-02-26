@@ -1,4 +1,4 @@
-# PracticaNode
+# Nodepop
 
 La API ha sido generada utilizando express:
 
@@ -56,16 +56,15 @@ La API ha sido generada utilizando express:
 
 
 5. Para acceder a la versión web:
-    - [Nodepop](http://localhost:3030/)
-    - [Para acceder directamente al catálogo](http://localhost:3030/anuncios)
+    - Nodepop
+        - [http://localhost:3030/](http://localhost:3030/)
+    - Para acceder directamente al catálogo
+        - [http://localhost:3030/anuncios](http://localhost:3030/anuncios)
         - Será posible filtrar por artículo.
         - También todos los filtros, paginación y orden se podrán introducir en la query string de forma manual.
 
 **Notas**:
 - El filtro por tag, si indicamos varios aplica un OR. 
-
     Parece más cómodo que los criterios por tags sean los que se indican para poder buscar múltiples artículos buscando por sus tags.
-
-
 - El filtro por artículo, no distingurá entre mayúsculas y minúsculuas.
     Busacará el texto en la descripción, en cualquier posición, aplicará un contiene.
